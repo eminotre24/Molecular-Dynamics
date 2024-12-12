@@ -28,3 +28,5 @@ b \equiv \left(1 + \frac{\gamma \Delta t}{2m}\right)^{-1}
 $$
 
 Theres also a "tutorial" in which the operation is more comprehensible, and the user can modify the parameters to obtain different results as of the simulation. Here we show the result of this tutorial, an animation of the particles' system:
+
+![Animation](test_animation_git.gif)
