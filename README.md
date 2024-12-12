@@ -7,10 +7,4 @@ $$
 m \ddot{\vec{x}} = \vec{F} - \gamma \dot{\vec{x}} + \vec{\eta}
 $$
 
-In which the case of this system, the force is given as the sum of all the interactions with neighboor particles. The simulation was created using the Verlet Algorithm.
-
-Theres also a "tutorial" in which the operation is more comprehensible, and the user can modify the parameters to obtain different results as of the simulation. The last code generates a video of this sort:
-
-<video src="test_animation.mp4" controls width="640">
-  Your browser does not support the video tag.
-</video> 
+In which the case of this system, the force is given as the sum of all the interactions with neighboor particles. The simulation was created using the Verlet Algorithm. Theres also a "tutorial" in which the operation is more comprehensible, and the user can modify the parameters to obtain different results as of the simulation.
