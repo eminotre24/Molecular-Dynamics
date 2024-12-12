@@ -8,7 +8,7 @@ module moldynamics
     #Modules Used for this Module
     using Plots, LaTeXStrings, Statistics, Distributions
 
-    export verlet_langevin_system, anim_system, unwrap_positions, real_time
+    export verlet_langevin_system, anim_system, anim_system_gif, unwrap_positions, real_time
 
     #Internal Functions
     function time_gen(time_data::NTuple{4, Float64})
@@ -177,6 +177,23 @@ module moldynamics
             scatter(x[:, i], y[:, i], title="Trayectories of the Particles", xlabel=L"x", ylabel=L"y", color=1:number_of_particles, xlims=(0, box_size), ylims=(0, box_size), label=false, dpi=300)
         end
         gif(anim, filename * ".mp4", fps = 30)
+    end
+
+    function anim_system_gif(x::Matrix{Float64}, y::Matrix{Float64}, save_length::Int, box_size::Int, filename::String)
+        """
+            Animate the particle system in gif format. Used for the GitHub repository description.
+            Args:
+                x: Matrix with the x positions of the number_of_particles' particles ([particle, time]), given as the points saved using the save_step
+                y: Matrix with the y positions of the number_of_particles' particles ([particle, time]), given as the points saved using the save_step
+                save_length: lenght of the time in save_steps 
+                filename: String of the name of the file omiting the format
+        """
+        plot()
+        number_of_particles = size(x, 1)
+        anim = @animate for i ∈ 1:save_length
+            scatter(x[:, i], y[:, i], title="Trayectories of the Particles", xlabel=L"x", ylabel=L"y", color=1:number_of_particles, xlims=(0, box_size), ylims=(0, box_size), label=false, dpi=150)
+        end
+        gif(anim, filename * ".gif", fps = 15)
     end
 
     function unwrap_positions(positions::Vector{Float64}, box_size::Int)

@@ -15,11 +15,11 @@ parameters_langevin = (viscosity, mass, temperature, boltzmann_constant)
 
 #Simulation Parameters
 box_size = 30
-number_of_particles = 20
+number_of_particles = 50
 
 #Time Parameters
 initial_time = 0.0
-final_time = 100.0
+final_time = 50.0
 time_resolution = 0.01
 save_step = 0.1
 
@@ -44,4 +44,5 @@ ylabel!(L"x")
 savefig("example_trayectories_x.png")
 
 #Create an Animation of the Particle's System
-#anim_system(x, y, s, box_size, "test_animation")
+#anim_system_(x, y, s, box_size, "test_animation") #Better resolution in mp4 format
+anim_system_gif(x, y, s, box_size, "test_animation_git")
